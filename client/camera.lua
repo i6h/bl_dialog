@@ -1,9 +1,14 @@
 local cam
 
 function CreateCam(ped)
+    if not DoesEntityExist(ped) then
+        print("Ped does not exist.")
+        return
+    end
     local coords = GetEntityCoords(ped, true)
     local x, y, z = coords.x + GetEntityForwardX(ped) * 1.2, coords.y + GetEntityForwardY(ped) * 1.2, coords.z + 0.52
     local camRot = GetEntityRotation(ped, 2)
+    DestroyCamera()
     cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", x, y, z, camRot.x, camRot.y, camRot.z + 181.0, GetGameplayCamFov(), false, 0)
 
     SetCamActive(cam, true)
@@ -14,4 +19,5 @@ end
 function DestroyCamera()
     RenderScriptCams(false, true, Config.transitionTime, true, false)
     DestroyCam(cam, false)
+    cam = nil
 end
