@@ -53,8 +53,4 @@ html, body {
 .dialog-button:hover {
     border: 1px solid rgba(134, 133, 239, 0.4);
     background: linear-gradient(90deg, rgba(134, 133, 239, 0.64) 0%, rgba(134, 133, 239, 0.2176) 100%);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7e4ece5 (Add ped spawning and reputation system)
