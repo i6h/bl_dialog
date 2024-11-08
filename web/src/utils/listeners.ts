@@ -8,7 +8,7 @@ const AlwaysListened: DebugEventCallback[] = [
     //     handler: (data: string) => {
     //         console.log("This is always listened to because it is in the AlwaysListened array.")
     //     }
-    // }
+    // } 
 ]
 
 export default AlwaysListened
