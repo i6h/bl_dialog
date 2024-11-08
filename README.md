@@ -30,6 +30,13 @@ exports.bl_dialog:setupPed({
     ped = 'a_m_m_beach_01', -- ped modal
     ped_id = 'fisherman_1', -- must be unique
     coords = vector4(1255.79, 791.82, 104.37 - 1, 180), -- ped coords to spawn
+    -- animation = { 
+    --     dict = "amb@world_human_stand_mobile@male@text@enter",
+    --     name = "enter",
+    --     loop = false 
+    -- },
+    -- prop = nil,
+    scenario = "WORLD_HUMAN_CLIPBOARD",
     dialog = {
         {
             id = 'initial_fisherman_talk',

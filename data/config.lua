@@ -1,12 +1,30 @@
+
+-- ============================ 
+-- === Configuration ===
+-- ============================
+
 Config = {}
 
-Config.transitionTime = 2000 -- camera transition time between your ped and dialog ped
-Config.Debug = false -- debug for debugging
-Config.pedDataList = { -- peds :D 
+Config.transitionTime = 2000 -- Camera transition time between your ped and dialog ped
+Config.interaction = 'target' -- Options: 'target' from bl_bridge, 'interact' from darktrovx
+
+Config.pedDataList = {
     {
         ped = 'a_m_m_beach_01',
-        ped_id = 'fisherman_1', -- must be unique
-        coords = vector4(1255.79, 791.82, 104.37 - 1, 180),
+        ped_id = 'fisherman_1',
+        coords = vector4(1255.79, 791.82, 103.37, 180),
+        -- animation = {
+        --     dict = "amb@world_human_stand_mobile@male@text@enter",
+        --     name = "enter",
+        --     loop = false 
+        -- },
+        -- prop = {
+        --     propModel = 'prop_fishing_rod_01',
+        --     bone = 28422,
+        --     pos = vector3(0.1, 0.0, 0.0),
+        --     rot = vector3(0.0, 0.0, 0.0),
+        -- },
+        scenario = "WORLD_HUMAN_CLIPBOARD",
         dialog = {
             {
                 id = 'initial_fisherman_talk',
@@ -19,14 +37,18 @@ Config.pedDataList = { -- peds :D
                         label = 'Don\'t give him fish',
                         reqRep = 0,
                         nextDialog = 'fisherman_second',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                     {
                         id = 'giveFish',
                         label = 'Give him fish',
                         reqRep = 60,
                         nextDialog = 'fisherman_talk_end',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                 },
             },
@@ -41,7 +63,9 @@ Config.pedDataList = { -- peds :D
                         label = 'Ok, I\'ll comply',
                         reqRep = 20,
                         nextDialog = 'fisherman_talk_end',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                 },
             },
@@ -62,8 +86,11 @@ Config.pedDataList = { -- peds :D
     },
     {
         ped = 'a_f_m_beach_01',
-        ped_id = 'fisherWoman', -- must be unique
-        coords = vector4(1253.69, 791.22, 104.58 - 1,190),
+        ped_id = 'fisherWoman',
+        coords = vector4(1253.69, 791.22, 103.58, 190),
+        -- animation = nil,
+        -- prop = nil,
+        scenario = nil,
         dialog = {
             {
                 id = 'initial_fisherman_talkk',
@@ -76,21 +103,27 @@ Config.pedDataList = { -- peds :D
                         label = 'Don\'t give him fish',
                         reqRep = 0,
                         nextDialog = 'fisherman_secondd',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                     {
-                        id = 'giveFish',
+                        id = 'giveFish10',
                         label = 'Give him fish 10',
                         reqRep = 10,
                         nextDialog = 'fisherman_talk_endd',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                     {
-                        id = 'giveFish',
+                        id = 'giveFish20',
                         label = 'Give him fish 20',
                         reqRep = 20,
                         nextDialog = 'fisherman_talk_endd',
-                        onSelect = function() end
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                 },
             },
@@ -104,8 +137,10 @@ Config.pedDataList = { -- peds :D
                         id = 'comply',
                         label = 'Ok, I\'ll comply',
                         reqRep = 20,
-                        nextDialog = 'fisherman_talk_end',
-                        onSelect = function() end
+                        nextDialog = 'fisherman_talk_endd',
+                        onSelect = function() 
+                            -- Additional logic here
+                        end
                     },
                 },
             },
